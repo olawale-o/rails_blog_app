@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  before(:each) do
-    get users_path
-  end
   describe 'GET /index' do
+    before(:each) do
+      get users_path
+    end
+
     it 'should return http status code 200' do
       expect(response).to have_http_status(200)
     end
@@ -19,13 +20,12 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('List all users')
     end
   end
-end
 
-RSpec.describe 'Users', type: :request do
-  before(:each) do
-    get user_path(2)
-  end
   describe 'GET /show' do
+    before(:each) do
+      get user_path(2)
+    end
+
     it 'should return http status code 200' do
       expect(response).to have_http_status(200)
     end
@@ -41,3 +41,4 @@ RSpec.describe 'Users', type: :request do
     end
   end
 end
+
