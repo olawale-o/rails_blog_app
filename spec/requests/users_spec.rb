@@ -20,3 +20,24 @@ RSpec.describe 'Users', type: :request do
     end
   end
 end
+
+RSpec.describe 'Users', type: :request do
+  before(:each) do
+    get user_path(2)
+  end
+  describe 'GET /show' do
+    it 'should return http status code 200' do
+      expect(response).to have_http_status(200)
+    end
+
+    it 'should render the correct view' do
+      expect(response).to render_template(:show)
+      expect(response).to_not render_template(:index)
+      assert_template 'users/show'
+    end
+
+    it 'should include Here is a list of all user posts in the view' do
+      expect(response.body).to include('Here is a list of all user posts')
+    end
+  end
+end
