@@ -16,7 +16,7 @@ RSpec.describe 'Users', type: :request do
       assert_template 'users/index'
     end
 
-    it 'should include List all users in the body' do
+    it 'should include List of all users in the body' do
       expect(response.body).to include('Here is a List of all users')
     end
   end
