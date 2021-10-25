@@ -15,8 +15,8 @@ RSpec.describe 'Posts', type: :request do
       assert_template 'posts/index'
     end
 
-    it 'should include List all posts for a user with id = 2 in the view' do
-      expect(response.body).to include('List all posts for a selected user')
+    it 'should include Here is a List of posts for a given user in the body' do
+      expect(response.body).to include('Here is a List of posts for a given user')
     end
   end
 
@@ -34,8 +34,8 @@ RSpec.describe 'Posts', type: :request do
       assert_template 'posts/show'
     end
 
-    it 'should include Display selected post of a specific user in the view' do
-      expect(response.body).to include('Display selected post of a specific user')
+    it 'should include Here is a given post for a given user in the body' do
+      expect(response.body).to include('Here is a given post for a given user')
     end
   end
 end

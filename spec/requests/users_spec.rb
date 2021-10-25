@@ -16,8 +16,8 @@ RSpec.describe 'Users', type: :request do
       assert_template 'users/index'
     end
 
-    it 'should include List all users in the view' do
-      expect(response.body).to include('List all users')
+    it 'should include List all users in the body' do
+      expect(response.body).to include('Here is a List of all users')
     end
   end
 
@@ -36,8 +36,9 @@ RSpec.describe 'Users', type: :request do
       assert_template 'users/show'
     end
 
-    it 'should include Here is the selected user information in the view' do
-      expect(response.body).to include('Here is the selected user information and all posts')
+    it 'should include Here is the information and list of all posts for a given user
+  in the body' do
+      expect(response.body).to include('Here is the information and list of all posts for a given user')
     end
   end
 end
