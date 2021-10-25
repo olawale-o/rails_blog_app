@@ -29,6 +29,11 @@
 ```
     bundle install
 ```
+
+### Test
+```
+  bundle exec rspec spec/requests
+```
 ## Authors
 
 👤 **Omoogun Olawale**
