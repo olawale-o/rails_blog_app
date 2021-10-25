@@ -9,13 +9,13 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it 'should render the correct view' do
+    it 'should list all the posts for user with id = 2 in the correct view' do
       expect(response).to render_template(:index)
       expect(response).to_not render_template(:show)
       assert_template 'posts/index'
     end
 
-    it 'should include List all posts for a selected user in the view' do
+    it 'should include List all posts for a user with id = 2 in the view' do
       expect(response.body).to include('List all posts for a selected user')
     end
   end
@@ -28,7 +28,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it 'should render the correct view' do
+    it 'should list a post with id = 1 of user with user_id = 2 in the correct view' do
       expect(response).to render_template(:show)
       expect(response).to_not render_template(:index)
       assert_template 'posts/show'
