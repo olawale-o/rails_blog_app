@@ -1,7 +1,7 @@
 class CreatePosts < ActiveRecord::Migration[6.1]
   def change
     create_table :posts do |t|
-      t.references :author, null: false, foreign_key: { to_table: :users }, index: { name: 'idx_posts_user_id' }
+      t.references :user, null: false, foreign_key: true, index: true
       t.string :title, null: false, default: 'title'
       t.text :text, null: false, default: 'short text'
       t.timestamps
