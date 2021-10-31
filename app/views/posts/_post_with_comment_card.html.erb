@@ -1,5 +1,5 @@
 <li class="post__comment-item mb-2">
-  <%= link_to user_post_path(5, 1) do %>
+  <%= link_to user_post_path(params[:user_id], no) do %>
     <%= render partial: "post_card", locals: { post: { comments: 2, likes: 4, title: no} } %>
   <% end %>
   <ul class="comment__list">

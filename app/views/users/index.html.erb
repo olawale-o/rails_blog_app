@@ -1,7 +1,11 @@
 <div class="profile__container">
   <ul class="profile__list">
     <% (1..3).each do |n| %>
-      <%= render partial: "user_list", locals: { no: n } %>
+      <li class="profile__item">
+        <%= link_to user_path(n) do %>
+          <%= render partial: "user_card", locals: { user: { name: "user #{n}", posts: n } } %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 </div>
