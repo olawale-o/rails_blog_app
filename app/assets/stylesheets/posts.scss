@@ -27,3 +27,15 @@
 .post__comment {
   margin-bottom: 5rem;
 }
+
+.post .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.header .post__title {
+  margin-bottom: 0;
+  font-size: 1.85rem;
+}
