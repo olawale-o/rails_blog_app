@@ -35,6 +35,32 @@ img {
   max-width: 100%;
 }
 
+li {
+  list-style: none;
+}
+.mt-2{
+  margin-top: 2rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mb-2{
+  margin-bottom: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+}
+
 .container {
   padding: 0 2rem;
 }
@@ -57,4 +83,12 @@ img {
 
 .bio__text {
   font-size: 2rem;
+}
+
+.comment__list {
+  padding: 0.8rem;
+}
+
+.comment__item {
+  font-size: 1.85rem;
 }
