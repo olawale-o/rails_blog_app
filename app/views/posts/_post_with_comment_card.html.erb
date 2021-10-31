@@ -1,17 +1,19 @@
 <li class="post__comment-item mb-2">
+  <%= link_to user_post_path(5, 1) do %>
     <%= render partial: "post_card", locals: { post: { comments: 2, likes: 4, title: no} } %>
-    <ul class="comment__list">
-    <li class="comment__item">
-        <span class="comment__item-user">Username: </span>
-        <span class="comment__item-comment">Comment 1</span>
-    </li>
-    <li class="comment__item">
-        <span class="comment__item-user">Username: </span>
-        <span class="comment__item-comment">Comment 2</span>
-    </li>
-    <li class="comment__item">
-        <span class="comment__item-user">Username: </span>
-        <span class="comment__item-comment">Comment 3</span>
-    </li>
-    </ul>
+  <% end %>
+  <ul class="comment__list">
+  <li class="comment__item">
+    <span class="comment__item-user">Username: </span>
+    <span class="comment__item-comment">Comment 1</span>
+  </li>
+  <li class="comment__item">
+    <span class="comment__item-user">Username: </span>
+    <span class="comment__item-comment">Comment 2</span>
+  </li>
+  <li class="comment__item">
+    <span class="comment__item-user">Username: </span>
+    <span class="comment__item-comment">Comment 3</span>
+  </li>
+  </ul>
 </li>

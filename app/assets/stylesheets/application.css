@@ -33,6 +33,11 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 img {
   object-fit: cover;
   max-width: 100%;
@@ -73,6 +78,7 @@ li {
   max-width: 50rem;
   margin: 0 auto;
   width: 100%;
+  padding: 2.5rem 0;
 }
 
 .bio {
