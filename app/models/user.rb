@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   def top_most_recent_posts(limit = 3)
-    posts.order('created_at DESC').limit(limit)
+    posts.order(created_at: :desc).limit(limit)
   end
 end
