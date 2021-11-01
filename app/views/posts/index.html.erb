@@ -1,1 +1,9 @@
-<p>Here is a List of posts for a given user</p>
+<div class="profile__container">
+  <%= render partial: "users/user_card", locals: { user: @user_id } %>
+    <ul class="post__comment">
+      <% (1..3).each do |p| %>
+        <%= render partial: "post_with_comment_card", locals: { post: p } %>
+      <% end %>
+    </ul>
+  <button class="btn">Pagination</button>
+</div>
