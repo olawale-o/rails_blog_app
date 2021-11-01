@@ -1,19 +1,15 @@
 <li class="post__comment-item mb-2">
-  <%= link_to user_post_path(params[:user_id], no) do %>
-    <%= render partial: "post_card", locals: { post: { comments: 2, likes: 4, title: no} } %>
+  <%= link_to user_post_path(@user.id, post.id) do %>
+    <%= render partial: "post_card", locals: { post: post } %>
   <% end %>
-  <ul class="comment__list">
-  <li class="comment__item">
-    <span class="comment__item-user">Username: </span>
-    <span class="comment__item-comment">Comment 1</span>
-  </li>
-  <li class="comment__item">
-    <span class="comment__item-user">Username: </span>
-    <span class="comment__item-comment">Comment 2</span>
-  </li>
-  <li class="comment__item">
-    <span class="comment__item-user">Username: </span>
-    <span class="comment__item-comment">Comment 3</span>
-  </li>
-  </ul>
+  <% if post.comments.size > 0 %>
+    <ul class="comment__list">
+      <% post.comments.each do |c| %>
+        <li class="comment__item">
+          <span class="comment__item-user"><%= c.user.name.capitalize %>: </span>
+          <span class="comment__item-comment"><%= c.text %></span>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </li>

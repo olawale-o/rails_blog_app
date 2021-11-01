@@ -1,27 +1,21 @@
 <div class="profile__container">
   <div class="post">
     <div class="header">
-      <h5 class="post__title">Post <%= params[:id] %> by user <%= params[:user_id] %></h5>
+      <h5 class="post__title"><%= @post.title %> by <%= @user.name %></h5>
       <div class="post__likes_comments_counter">
-        <span>Comments: 3</span>, <span>Likes: 3</span>
+        <span>Comments: <%= @post.comments.size %></span>, <span>Likes: <%= @post.likes.size %></span>
       </div>
     </div>
-    <p class="post__text">
-      Next, I ran the command below to reinstall my gems for the project:
-    </p>
+    <p class="post__text"><%= @post.text %></p>
   </div>
-  <ul class="comment__list">
-    <li class="comment__item">
-      <span class="comment__item-user">Username: </span>
-      <span class="comment__item-comment">Comment 1</span>
-    </li>
-    <li class="comment__item">
-      <span class="comment__item-user">Username: </span>
-      <span class="comment__item-comment">Comment 2</span>
-    </li>
-    <li class="comment__item">
-      <span class="comment__item-user">Username: </span>
-      <span class="comment__item-comment">Comment 3</span>
-    </li>
-  </ul>
+  <% if @post.comments.size > 0 %>
+    <ul class="comment__list">
+      <% @post.comments.each do |c| %>
+        <li class="comment__item">
+          <span class="comment__item-user"><%= c.user.name.capitalize %>: </span>
+          <span class="comment__item-comment"><%= c.text %></span>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
