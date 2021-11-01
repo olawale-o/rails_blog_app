@@ -1,9 +1,9 @@
 <div class="profile mb-2">
   <div class="profile__picture">
-    <%= image_tag user.photo, alt: "profile" %>
+    <%= image_tag 'https://i.pravatar.cc/150?img=2', alt: "profile" %>
   </div>
   <div class="profile__details">
-    <h6 class="profile__details-name"><%= user.name.capitalize %></h6>
-    <div class="posts_counter">Number of posts: <%= user.posts.count %></div>
+    <h6 class="profile__details-name"><%= "user #{user}".capitalize %></h6>
+    <div class="posts_counter">Number of posts: 3</div>
   </div>
 </div>
