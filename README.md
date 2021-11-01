@@ -7,6 +7,8 @@
 - Ruby
 - Ruby on Rails
 
+# Screenshot
+![screenshot](https://github.com/olawale-o/rails_blog_app/blob/views/app/assets/images/blog_screenshoot.png?raw=true")
 ## Getting started
 
 #### Prerequisites
