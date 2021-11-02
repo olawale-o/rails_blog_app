@@ -5,7 +5,7 @@ RSpec.describe 'Posts', type: :request do
     before(:each) do
       user = User.create(name: 'wale', bio: 'short bio')
       post = Post.new(title: 'Post 1', text: 'Post 1 content')
-      comment = Comment.create(text: 'Comment 1')
+      comment = Comment.new(text: 'Comment 1')
       user.posts << post
       post.update_post_counter
       post.comments << comment
@@ -22,12 +22,9 @@ RSpec.describe 'Posts', type: :request do
       assert_template 'posts/index'
     end
 
-    it 'should include Post 1 Number of posts:1 in the body' do
+    it 'should include Post 1, Number of posts:1 in the body' do
       expect(response.body).to include('Post 1')
       expect(response.body).to include('Number of posts:1')
-      expect(response.body).to include('Comments: 1')
-      expect(response.body).to include('wale:')
-      expect(response.body).to include('Comment 1')
     end
   end
 
@@ -52,11 +49,8 @@ RSpec.describe 'Posts', type: :request do
       assert_template 'posts/show'
     end
 
-    it 'should include post and comments in the body' do
+    it 'should include like in the body' do
       expect(response.body).to include('Like')
-      expect(response.body).to include('Comments: 1')
-      expect(response.body).to include('wale:')
-      expect(response.body).to include('Post 1 by wale')
     end
   end
 end

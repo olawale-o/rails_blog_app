@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { Post.new(title: 'Post 1', text: 'Post 1 content', comments_counter: 0, likes_counter: 0) }
+  subject { Post.new(title: 'Post 1', text: 'Post 1 content') }
 
   before { subject.save }
 
@@ -33,7 +33,7 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'update_post_counter' do
-    it 'should update post counter for the user who create post' do
+    it 'should update post counter for the user who created post' do
       new_user = User.new(name: 'wale', bio: 'Short bio')
       new_user.save
       new_post = Post.new(user_id: new_user.id, title: 'Post 2', text: 'Post 2 content')

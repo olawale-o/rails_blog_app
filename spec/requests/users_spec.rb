@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
     before(:each) do
-      User.create(name: 'Wale', bio: 'bio')
+      User.create(name: 'Wale', bio: 'bio', posts_counter: 0)
       get users_path
     end
 

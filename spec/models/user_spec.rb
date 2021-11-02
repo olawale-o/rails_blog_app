@@ -19,29 +19,23 @@ RSpec.describe User, type: :model do
 
   describe 'top_most_recent_posts' do
     it 'when total posts is less than 3 limit post to 3' do
-      post = Post.new(title: 'Post 1', text: 'post 1 content', comments_counter: 0, likes_counter: 0)
+      post = Post.new(title: 'Post 1', text: 'post 1 content')
       subject.posts << post
       expect(subject.top_most_recent_posts.size).to be <= 3
     end
 
     it 'when total posts is greater than 3 limit posts to 3' do
-      post1 = Post.new(title: 'Post 1', text: 'post 1 content', comments_counter: 0, likes_counter: 0)
+      post1 = Post.new(title: 'Post 1', text: 'post 1 content')
       subject.posts << post1
-      post1.update_post_counter
-      post2 = Post.new(title: 'Post 2', text: 'post 2 content', comments_counter: 0, likes_counter: 0)
+      post2 = Post.new(title: 'Post 2', text: 'post 2 content')
       subject.posts << post2
-      post2.update_post_counter
-      post3 = Post.new(title: 'Post 3', text: 'post 3 content', comments_counter: 0, likes_counter: 0)
+      post3 = Post.new(title: 'Post 3', text: 'post 3 content')
       subject.posts << post3
-      post3.update_post_counter
-      post4 = Post.new(title: 'Post 4', text: 'post 4 content', comments_counter: 0, likes_counter: 0)
+      post4 = Post.new(title: 'Post 4', text: 'post 4 content')
       subject.posts << post4
-      post4.update_post_counter
-      post5 = Post.new(title: 'Post 5', text: 'post 5 content', comments_counter: 0, likes_counter: 0)
+      post5 = Post.new(title: 'Post 5', text: 'post 5 content')
       subject.posts << post5
-      post5.update_post_counter
       expect(subject.top_most_recent_posts.size).to be <= 3
-      expect(subject.posts_counter).to eq(5)
     end
   end
 end
