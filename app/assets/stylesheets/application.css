@@ -81,6 +81,32 @@ li {
   margin: 0 auto;
 }
 
+.comment {
+  margin-top: 1rem;
+  width: 15rem;
+  font-size: 1.8rem;
+  margin-left: auto;
+  text-align: center;
+}
+
+.nav {
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav__link {
+  font-size: 1.85rem;
+  background: #1016f0;
+  color: #fff;
+  padding: 0.85rem 1.2rem;
+}
+
 .container {
   padding: 0 2rem;
 }
@@ -113,4 +139,64 @@ li {
 
 .comment__item {
   font-size: 1.85rem;
+}
+
+.form__container {
+  max-width: 50rem;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2.5rem 0;
+}
+
+.form__header {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  margin-bottom: 1.8rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1.35rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+}
+
+.text_area {
+  padding: 0.8rem 0.5rem;
+}
+
+.like__container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.liked {
+  font-size: 1.85rem;
+  background: #3e43e8;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.comment__container {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  width: 100%;
+}
+
+.comment__container a {
+  color: #fff;
+  background: red;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  font-size: 1.5rem;
 }
