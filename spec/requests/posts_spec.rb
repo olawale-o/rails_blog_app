@@ -7,7 +7,6 @@ RSpec.describe 'Posts', type: :request do
       post = Post.new(title: 'Post 1', text: 'Post 1 content')
       comment = Comment.new(text: 'Comment 1')
       user.posts << post
-      post.update_post_counter
       post.comments << comment
       user.comments << comment
       get user_posts_path(user.id)
@@ -34,7 +33,6 @@ RSpec.describe 'Posts', type: :request do
       post = Post.new(title: 'Post 1', text: 'Post 1 content')
       comment = Comment.create(text: 'Comment 1')
       user.posts << post
-      post.update_post_counter
       post.comments << comment
       user.comments << comment
       get user_post_path(user.id, post.id)

@@ -27,7 +27,6 @@ RSpec.describe 'Users', type: :request do
       user = User.create(name: 'wale', bio: 'short bio')
       post = Post.create(title: 'Post 1', text: 'Post 1 content')
       user.posts << post
-      post.update_post_counter
       get user_path(user.id)
     end
 

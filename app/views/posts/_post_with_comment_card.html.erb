@@ -3,6 +3,6 @@
     <%= render partial: "post_card", locals: { post: post } %>
   <% end %>
   <% if can_display_comments?(post.comments_counter) %>
-    <%= render partial: "comment_card", locals: { comments: post.five_most_recent_comments } %>
+    <%= render partial: "comment_card", locals: { comments: post.most_recent_comments } %>
   <% end %>
 </li>

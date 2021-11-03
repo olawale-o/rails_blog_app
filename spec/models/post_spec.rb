@@ -34,10 +34,8 @@ RSpec.describe Post, type: :model do
 
   describe 'update_post_counter' do
     it 'should update post counter for the user who created post' do
-      new_user = User.new(name: 'wale', bio: 'Short bio')
-      new_user.save
-      new_post = Post.new(user_id: new_user.id, title: 'Post 2', text: 'Post 2 content')
-      new_post.update_post_counter
+      new_user = User.create(name: 'wale', bio: 'Short bio')
+      new_post = Post.create(user_id: new_user.id, title: 'Post 2', text: 'Post 2 content')
       expect(new_post.user.posts_counter).to eq(1)
     end
   end

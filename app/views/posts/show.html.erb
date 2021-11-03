@@ -1,7 +1,7 @@
 <div class="profile__container">
   <div class="post">
     <div class="header">
-      <h5 class="post__title"><%= @post.title.capitalize %> by <%= @user.name %></h5>
+      <h5 class="post__title"><%= capitalize(@post.title) %> by <%= capitalize(@user.name) %></h5>
       <div class="post__likes_comments_counter">
         <%= render partial: "posts/no_of_comments", locals: { total_comments: @post.comments_counter } %>, <%= render partial: "posts/no_of_likes", locals: { total_likes: @post.likes_counter } %>
       </div>
