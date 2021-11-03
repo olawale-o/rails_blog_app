@@ -24,7 +24,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should include Post 1, Number of posts:1 in the body' do
       expect(response.body).to include('Post 1')
-      expect(response.body).to include('Number of posts:1')
+      expect(response.body).to include('Number of posts: 1')
     end
   end
 

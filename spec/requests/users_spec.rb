@@ -43,7 +43,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'should include Post 1 short bio and Number of posts:1 in the body' do
       expect(response.body).to include('Post 1')
-      expect(response.body).to include('Number of posts:1')
+      expect(response.body).to include('Number of posts: 1')
       expect(response.body).to include('short bio')
     end
   end
