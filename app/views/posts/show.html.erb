@@ -9,9 +9,8 @@
     <%= render partial: "like_view", locals: { post: @post } %>
     <p class="post__text"><%= @post.text %> </p>
   </div>
-  <% if @post.comments_counter > 0 %>
+  <% if can_display_comments?(@post.comments_counter) %>
     <%= render partial: "comment_card", locals: { comments: @post.comments } %>
   <% end %>
   <%= render partial: "comment_form", locals: { post: @post } %>
-
 </div>

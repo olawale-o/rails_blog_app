@@ -3,7 +3,7 @@
     <%= image_tag 'https://i.pravatar.cc/150?img=2', alt: "profile" %>
   </div>
   <div class="profile__details">
-    <h6 class="profile__details-name"><%= user.name.capitalize %></h6>
-    <div class="posts_counter">Number of posts:<%= user.posts_counter %></div>
+    <h6 class="profile__details-name"><%= capitalize(user.name) %></h6>
+    <div class="posts_counter"><%= t("post.total", count: user.posts_counter) %></div>
   </div>
 </div>
