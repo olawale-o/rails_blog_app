@@ -7,7 +7,7 @@
       </div>
     </div>
     <%= render partial: "like_view", locals: { post: @post } %>
-    <p class="post__text"><%= @post.text %> </p>
+    <p class="post__text"><%= @post.text %></p>
   </div>
   <% if can_display_comments?(@post.comments_counter) %>
     <%= render partial: "comment_card", locals: { comments: @post.comments } %>
