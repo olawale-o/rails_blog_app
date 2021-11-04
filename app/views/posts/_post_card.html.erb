@@ -1,6 +1,6 @@
 <div class="post mb-2 mt-2">
   <h5 class="post__title"><%= capitalize(post.title) %></h5>
-  <p class="post__text"><%= shorten_text(post.text) %>  </p>
+  <p class="post__text"><%= shorten_text(post.text) %></p>
   <div class="post__likes_comments_counter">
     <%= render partial: "posts/no_of_comments", locals: { total_comments: post.comments_counter } %>, <%= render partial: "posts/no_of_likes", locals: { total_likes: post.likes_counter } %>
   </div>

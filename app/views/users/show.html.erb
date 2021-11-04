@@ -2,7 +2,7 @@
   <%= render partial: "user_card", locals: { user: @user } %>
   <div class="bio">
     <h5 class="bio__heading">Bio</h5>
-    <p class="bio__text"><%= @user.bio %> </p>
+    <p class="bio__text"><%= @user.bio %></p>
   </div>
   <ul class="post__list">
     <% @posts.each do |p| %>
