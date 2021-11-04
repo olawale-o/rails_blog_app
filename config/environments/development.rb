@@ -80,4 +80,11 @@ Rails.application.configure do
   #   Bullet.console = true
   #   Bullet.rails_logger = true
   # end
+
+    # letter opener config
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.delivery_method = :letter_opener
+    LetterOpener.configure do |config|
+      config.message_template = :light
+    end 
 end
