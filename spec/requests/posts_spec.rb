@@ -49,6 +49,9 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should include like in the body' do
       expect(response.body).to include('Like')
+      expect(response.body).to include('Wale')
+      expect(response.body).to include('Comment 1')
+      expect(response.body).to include('wale:')
     end
   end
 end
