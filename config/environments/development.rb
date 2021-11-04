@@ -81,10 +81,13 @@ Rails.application.configure do
   #   Bullet.rails_logger = true
   # end
 
-    # letter opener config
+  # devisie config settings
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
     config.action_mailer.perform_deliveries = true
-    config.action_mailer.delivery_method = :letter_opener
-    LetterOpener.configure do |config|
-      config.message_template = :light
-    end 
+
+  # letter opener config
+  config.action_mailer.delivery_method = :letter_opener
+  LetterOpener.configure do |config|
+    config.message_template = :light
+  end 
 end
