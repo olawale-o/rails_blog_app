@@ -9,6 +9,8 @@ class Comment < ApplicationRecord
     post.update_column('comments_counter', post.comments_counter + 1)
   end
 
+  private
+
   def trim_text
     self.text = text.strip if text.present?
   end

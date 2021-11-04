@@ -19,6 +19,8 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(limit)
   end
 
+  private
+
   def trim_text
     self.title = title.strip if title.present?
     self.text = text.strip if text.present?

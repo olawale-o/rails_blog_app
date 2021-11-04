@@ -12,6 +12,8 @@ class User < ApplicationRecord
     posts.order(created_at: :desc).limit(limit)
   end
 
+  private
+
   def trim_text
     self.name = name.strip if name.present?
   end
