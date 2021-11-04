@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    confirmations: 'confirmations'
+  }, path_names: {
+    sign_in: 'log_in',
+    sign_up: 'create_account',
+    sign_out: 'logout'
+  }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'users#index'
 
