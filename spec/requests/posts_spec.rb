@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  sigin_user
+  signin_user
   describe 'GET /index' do
     before(:each) do
       post = Post.new(title: 'Post 1', text: 'Post 1 content')

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  sigin_user
+  signin_user
   describe 'GET /index' do
     before(:each) do
       get users_path
