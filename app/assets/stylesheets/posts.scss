@@ -6,6 +6,11 @@
   border: 1px solid #000;
 }
 
+.post__header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .post__title {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -24,6 +29,15 @@
 
 .comment__list {
   border: 1px solid #000;
+}
+
+.post__list {
+  margin-bottom: 2.5rem;
+}
+
+.posts_counter {
+  text-align: right;
+  font-size: 1.8rem;
 }
 
 .post__comment {

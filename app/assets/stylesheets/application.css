@@ -74,37 +74,12 @@ li {
   border: none;
 }
 
-.link {
-  display: block;
-  font-size: 1.8rem;
-  width: 15rem;
-  margin: 0 auto;
-}
-
 .comment {
   margin-top: 1rem;
   width: 15rem;
   font-size: 1.8rem;
   margin-left: auto;
   text-align: center;
-}
-
-.nav {
-  padding: 2rem;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.nav__list {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.nav__link {
-  font-size: 1.85rem;
-  background: #1016f0;
-  color: #fff;
-  padding: 0.85rem 1.2rem;
 }
 
 .container {
@@ -151,8 +126,8 @@ li {
 .form__header {
   font-size: 1.8rem;
   text-align: center;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
 }
 
 .field {
@@ -186,17 +161,57 @@ li {
   padding: 0.5rem;
 }
 
-.comment__container {
-  display: flex;
-  justify-content: flex-end;
-  text-align: right;
-  width: 100%;
+.form__links {
+  font-size: 1.45rem;
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
-.comment__container a {
-  color: #fff;
-  background: red;
-  margin-top: 0.5rem;
-  padding: 1rem;
+.form__links a {
+  margin-bottom: 2rem;
+}
+
+.form__links a:hover {
+  text-decoration: underline;
+}
+
+.check__label {
   font-size: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.caution {
+  font-size: 1.7rem;
+}
+
+.notices {
+  font-size: 1.8rem;
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.trash-btn {
+  background: #760724;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.box-icon {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.trash__container {
+  text-align: right;
+}
+
+.title__link:hover {
+  text-decoration: underline;
 }

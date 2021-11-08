@@ -7,7 +7,6 @@ RSpec.describe 'Posts', type: :request do
       post = Post.new(title: 'Post 1', text: 'Post 1 content')
       comment = Comment.new(text: 'Comment 1')
       user.posts << post
-      post.update_post_counter
       post.comments << comment
       user.comments << comment
       get user_posts_path(user.id)
@@ -24,7 +23,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should include Post 1, Number of posts:1 in the body' do
       expect(response.body).to include('Post 1')
-      expect(response.body).to include('Number of posts:1')
+      expect(response.body).to include('Number of posts: 1')
     end
   end
 
@@ -34,7 +33,6 @@ RSpec.describe 'Posts', type: :request do
       post = Post.new(title: 'Post 1', text: 'Post 1 content')
       comment = Comment.create(text: 'Comment 1')
       user.posts << post
-      post.update_post_counter
       post.comments << comment
       user.comments << comment
       get user_post_path(user.id, post.id)
@@ -51,6 +49,9 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should include like in the body' do
       expect(response.body).to include('Like')
+      expect(response.body).to include('Wale')
+      expect(response.body).to include('Comment 1')
+      expect(response.body).to include('wale:')
     end
   end
 end
