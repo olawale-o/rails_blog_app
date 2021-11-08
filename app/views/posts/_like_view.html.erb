@@ -1,6 +1,6 @@
 <div class="like__container">
   <% if post_liked_by?({ post: post, id: current_user.id }) %>
-    <i class="bx bxs-like like"></i>
+    <b class= "liked">Liked by you</b>
   <% else %>
     <%= button_to post_likes_path(post.id), method: :create do %>
       <i class="bx bxs-like like"></i>

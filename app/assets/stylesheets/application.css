@@ -211,3 +211,7 @@ li {
 .trash__container {
   text-align: right;
 }
+
+.title__link:hover {
+  text-decoration: underline;
+}
