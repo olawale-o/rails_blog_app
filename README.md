@@ -53,6 +53,11 @@
 * Twitter: [@twitterhandle](https://twitter.com/ibreaktherules)
 * LinkedIn: [LinkedIn](https://www.linkedin.com/in/olawaleomoogun/)
 
+
+👤 **Polina Stamenova**
+- GitHub: [@githubhandle](https://github.com/PolinaStamenova)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/polina-stamenova-a60766112/)
+
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!
