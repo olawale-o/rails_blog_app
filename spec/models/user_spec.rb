@@ -1,41 +1,57 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  subject { User.new(name: 'wale', bio: 'Short bio', posts_counter: 0) }
-
-  before { subject.save }
-
+RSpec.describe Post, type: :model do
   describe 'validations' do
-    it 'name should be present' do
-      subject.name = nil
-      expect(subject).to_not be_valid
+    let(:post) { build(:post) }
+
+    it 'title should be present' do
+      post.title = nil
+      expect(post).to_not be_valid
     end
 
-    it 'posts_counter should be present' do
-      subject.posts_counter = nil
-      expect(subject).to_not be_valid
+    it 'title length should be less than 250' do
+      post.title = 'title ' * 300
+      expect(post).to_not be_valid
+    end
+
+    it 'comments_counter should be present' do
+      post.comments_counter = nil
+      expect(post).to_not be_valid
+    end
+
+    it 'likes_counter should be present' do
+      post.likes_counter = nil
+      expect(post).to_not be_valid
     end
   end
 
-  describe 'top_most_recent_posts' do
-    it 'when total posts is less than 3 limit post to 3' do
-      post = Post.new(title: 'Post 1', text: 'post 1 content')
-      subject.posts << post
-      expect(subject.top_most_recent_posts.size).to be <= 3
+  describe 'update_post_counter' do
+    describe 'when user writes' do
+      let(:post) { create(:post) }
+      it 'should update post counter for the user' do
+        expect(post.user.posts_counter).to eq(1)
+      end
     end
+    describe 'when admin writes' do
+      let(:post) { create(:post, user: create(:is_admin)) }
+      it 'should update post counter for the user admin' do
+        expect(post.user.posts_counter).to eq(1)
+      end
+    end
+  end
 
-    it 'when total posts is greater than 3 limit posts to 3' do
-      post1 = Post.new(title: 'Post 1', text: 'post 1 content')
-      subject.posts << post1
-      post2 = Post.new(title: 'Post 2', text: 'post 2 content')
-      subject.posts << post2
-      post3 = Post.new(title: 'Post 3', text: 'post 3 content')
-      subject.posts << post3
-      post4 = Post.new(title: 'Post 4', text: 'post 4 content')
-      subject.posts << post4
-      post5 = Post.new(title: 'Post 5', text: 'post 5 content')
-      subject.posts << post5
-      expect(subject.top_most_recent_posts.size).to be <= 3
+  describe 'most_recent_comments' do
+    describe 'for a post created by a user' do
+      let(:post_with_comments) { create(:post_with_comments, no_of_comments: 10) }
+      it 'should be total of 5 comments' do
+        expect(post_with_comments.most_recent_comments.size).to eq(5)
+      end
+    end
+    describe 'for a post created by admin' do
+      let(:post_with_comments) { create(:post_with_comments, no_of_comments: 10, user: create(:is_admin)) }
+      it 'should be total of 5 comments' do
+        expect(post_with_comments.most_recent_comments.size).to eq(5)
+      end
     end
   end
 end
