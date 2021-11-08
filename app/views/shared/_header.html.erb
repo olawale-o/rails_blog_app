@@ -8,6 +8,9 @@
         <li class="nav__item">
           <%= link_to "Log out", destroy_user_session_path, class: "nav__link logout", method: :delete %>
         </li>
+        <li class="nav__item">
+          <span class="login_status"><%= current_user.role ||= 'user' %></span>
+        </li>
       <% else %>
         <li class="nav__item">
           <%= link_to "Login", new_user_session_path, class: "nav__link" %>
