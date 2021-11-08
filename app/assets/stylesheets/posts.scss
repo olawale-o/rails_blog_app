@@ -11,6 +11,10 @@
   justify-content: space-between;
 }
 
+.post__header a :hover {
+  text-decoration: underline;
+}
+
 .post__title {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -53,6 +57,10 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2.5rem;
+}
+
+.post .header a:hover {
+  text-decoration: underline;
 }
 
 .header .post__title {

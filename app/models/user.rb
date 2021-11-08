@@ -17,6 +17,10 @@ class User < ApplicationRecord
     posts.order(created_at: :desc).limit(limit)
   end
 
+  def is?(role)
+    self.role == role.to_s
+  end
+
   private
 
   def trim_text

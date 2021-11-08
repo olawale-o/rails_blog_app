@@ -203,6 +203,14 @@ li {
   cursor: pointer;
 }
 
+.like-btn {
+  background: #11199d;
+  margin-left: 0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
 .box-icon {
   font-size: 3rem;
   color: #fff;
@@ -210,8 +218,4 @@ li {
 
 .trash__container {
   text-align: right;
-}
-
-.title__link:hover {
-  text-decoration: underline;
 }
