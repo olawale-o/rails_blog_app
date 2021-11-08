@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     return unless user.present?
 
-    if user.role.eql?('admin')
+    if user.is? :admin
       can :manage, :all
     else
       can :destroy, Post do |post|
