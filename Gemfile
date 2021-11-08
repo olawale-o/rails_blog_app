@@ -38,6 +38,9 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'rswag-api'
+gem 'rswag-ui'
+
 group :development, :test do
   # Use to preview mail in the browser
   gem 'letter_opener'
@@ -47,6 +50,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Use rspec-rails
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'rswag-specs'
 end
 
 group :development do
