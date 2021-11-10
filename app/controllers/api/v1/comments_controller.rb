@@ -3,7 +3,6 @@ module Api
     class CommentsController < ApplicationController
       load_and_authorize_resource
       def index
-        puts current_user.name
         post_id = params[:post_id]
         @comments = Comment.where({ post_id: post_id }).order(:created_at)
         render json: {
@@ -12,7 +11,6 @@ module Api
       end
 
       def create
-        puts current_user.name
         @post = Post.find(params[:post_id])
         @comment = @post.comments.new(text: comment_params[:text], user_id: current_user.id)
 
