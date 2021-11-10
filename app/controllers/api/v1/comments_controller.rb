@@ -19,12 +19,18 @@ module Api
         else
           render json: { success: false, errors: @comment.errors }, status: :bad_request
         end
+      rescue ActiveRecord::RecordNotFound
+        record_not_found(params[:post_id])
       end
 
       private
 
       def comment_params
         params.require(:comment).permit(:text)
+      end
+
+      def record_not_found(post)
+        render json: { success: false, message: "Post #{post} does not exist" }, status: :not_found
       end
     end
   end
