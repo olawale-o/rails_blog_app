@@ -1,6 +1,8 @@
 module Api
   module V1
     class CommentsController < ApplicationController
+      load_and_authorize_resource
+
       def index
         post_id = params[:post_id]
         @comments = Comment.where({ post_id: post_id }).order(:created_at)
